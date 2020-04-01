@@ -1,4 +1,4 @@
-# ![Juice Shop Logo](https://raw.githubusercontent.com/bkimminich/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png) OWASP Juice Shop [![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-48A646.svg)](https://www.owasp.org/index.php/OWASP_Project_Inventory#tab=Flagship_Projects) [![GitHub release](https://img.shields.io/github/release/bkimminich/juice-shop.svg)](https://github.com/bkimminich/juice-shop/releases/latest) [![Twitter Follow](https://img.shields.io/twitter/follow/owasp_juiceshop.svg?style=social&label=Follow)](https://twitter.com/owasp_juiceshop) [![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/owasp_juiceshop?style=social)](https://reddit.com/r/owasp_juiceshop)
+# ![Juice Shop Logo](https://raw.githubusercontent.com/bkimminich/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png) OWASP Juice Shop [![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-48A646.svg)](https://owasp.org/projects/#sec-flagships) [![GitHub release](https://img.shields.io/github/release/bkimminich/juice-shop.svg)](https://github.com/bkimminich/juice-shop/releases/latest) [![Twitter Follow](https://img.shields.io/twitter/follow/owasp_juiceshop.svg?style=social&label=Follow)](https://twitter.com/owasp_juiceshop) [![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/owasp_juiceshop?style=social)](https://reddit.com/r/owasp_juiceshop)
 
 [![Build Status](https://travis-ci.org/bkimminich/juice-shop.svg?branch=master)](https://travis-ci.org/bkimminich/juice-shop)
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/bkimminich/juice-shop.svg)](https://cloud.docker.com/repository/docker/bkimminich/juice-shop/builds)
@@ -87,8 +87,8 @@ overview please visit the official project page:
 
 ### Docker Container
 
-[![Docker Automated build](https://img.shields.io/docker/automated/bkimminich/juice-shop.svg)](https://registry.hub.docker.com/u/bkimminich/juice-shop/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/bkimminich/juice-shop.svg)](https://registry.hub.docker.com/u/bkimminich/juice-shop/)
+[![Docker Automated build](https://img.shields.io/docker/automated/bkimminich/juice-shop.svg)](https://hub.docker.com/r/bkimminich/juice-shop)
+[![Docker Pulls](https://img.shields.io/docker/pulls/bkimminich/juice-shop.svg)](https://hub.docker.com/r/bkimminich/juice-shop)
 ![Docker Stars](https://img.shields.io/docker/stars/bkimminich/juice-shop.svg)
 [![](https://images.microbadger.com/badges/image/bkimminich/juice-shop.svg)](https://microbadger.com/images/bkimminich/juice-shop
 "Get your own image badge on microbadger.com")
@@ -185,6 +185,11 @@ images and packaged distributions are offered accordingly.
 | 11.x     | (:heavy_check_mark:) |                                                                                                                                                                                                                                                                   |                                                                                              |
 | 10.x     | :heavy_check_mark:   | [![Windows](docs/win32.png)](https://github.com/bkimminich/juice-shop/releases/latest) [![Linux](docs/linux.png)](https://github.com/bkimminich/juice-shop/releases/latest) [![MacOS](docs/darwin.png)](https://github.com/bkimminich/juice-shop/releases/latest) |                                                                                              |
 | <10.x    | :x:                  |                                                                                                                                                                                                                                                                   |                                                                                              |
+
+Juice Shop is automatically tested _only on the latest `.x` minor
+version_ of each node.js version mentioned above! There is no guarantee
+that older minor node.js releases will always work with Juice Shop!
+Please make sure you stay up to date with your chosen version.
 
 ## Demo
 
