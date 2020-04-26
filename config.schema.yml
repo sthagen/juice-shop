@@ -99,6 +99,8 @@ challenges:
     type: boolean
   showHints:
     type: boolean
+  restrictToTutorialsFirst:
+    type: boolean
   overwriteUrlForProductTamperingChallenge:
     type: string
   xssBonusPayload:
@@ -380,6 +382,11 @@ ctf:
       code:
         type: string
     resetPasswordMortyChallenge:
+      name:
+        type: string
+      code:
+        type: string
+    resetPasswordUvoginChallenge:
       name:
         type: string
       code:
