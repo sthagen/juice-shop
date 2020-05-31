@@ -44,6 +44,10 @@ Shop easier to hack!
   * [★★★ Björn's Favorite Pet](https://youtu.be/a0k465G8Zkc)
   * [★★★ Captcha Bypass](https://youtu.be/pgGVVOhIiaM)
   * [★★★ Client-side XSS Protection](https://youtu.be/bNjsjs0T0_k)
+  * [★★★ Database Schema](https://youtu.be/0-D-e66U2Z0)
+  * [★★★ Forged Feedback](https://youtu.be/99iKTSkZ814)
+  * [★★★ Forged Review](https://youtu.be/k2abfhtuU9c)
+  * [★★★ GDPR Data Erasure](https://youtu.be/zBTYSpp41u8)
 * [HackerSploit](https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q)
   Youtube channel (🧃`v7.x`)
   * [OWASP Juice Shop - SQL Injection](https://youtu.be/nH4r6xv-qGg)
@@ -89,4 +93,3 @@ Shop easier to hack!
 * [Automated solving script for the OWASP Juice Shop](https://github.com/incognitjoe/juice-shop-solver)
   written in Python by [@incognitjoe](https://github.com/incognitjoe)
   (🧃`v2.x`)
-

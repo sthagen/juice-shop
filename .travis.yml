@@ -8,7 +8,7 @@ arch:
   - amd64
   - arm64
 node_js:
-  - 13
+  - 14
   - 12
   - 10
 cache:
@@ -29,10 +29,8 @@ install:
 script: if [[ -z "$TRAVIS_TAG" && "$TRAVIS_OS_NAME" != "windows" && "$TRAVIS_CPU_ARCH" == "amd64" ]]; then NODE_ENV=test npm test; fi
 before_deploy:
   - npm install --production
-  - npm prune --production && cd frontend && npm prune --production && cd ..
-  - npm dedupe && cd frontend && npm dedupe && cd ..
-  - npm install grunt-cli
-  - npm run package
+  - npm install -g grunt-cli
+  - npm run package:ci
 deploy:
   - provider: releases
     overwrite: true
@@ -97,10 +95,8 @@ jobs:
         - chmod +x test/smoke/smoke-test.sh
       install:
         - npm install --production
-        - npm prune --production && cd frontend && npm prune --production && cd ..
-        - npm dedupe && cd frontend && npm dedupe && cd ..
-        - npm install grunt-cli
-        - npm run package
+        - npm install -g grunt-cli
+        - npm run package:ci
       script:
         - cd dist
         - tar -zxf juice-shop-*.tgz
@@ -108,7 +104,7 @@ jobs:
         - npm start &
         - ../../test/smoke/smoke-test.sh http://localhost:3000
     - stage: deploy
-      if: "(branch = master OR branch = develop OR branch = facelift) AND NOT type = pull_request"
+      if: "(branch = master OR branch = develop OR branch = facelift OR branch = gsoc2020) AND NOT type = pull_request"
       install: skip
       script: skip
       before_deploy:
@@ -122,19 +118,20 @@ jobs:
             master: juice-shop
             develop: juice-shop-staging
             facelift: juice-shop-experimental
+            gsoc2020: juice-shop-gsoc
           on:
             repo: bkimminich/juice-shop
           edge: true
 notifications:
   webhooks:
     urls:
-      - secure: QZ3/2h7hThg527PX1z7kTTRGL5jEbTTHRbetYHt8Gzgdhvtruq4cjxMQZdUcmxKlncAhoB976iFl/Ja9EpExgrXnt/Tj0Aft6JDc7g8y0kuD/SiQpFT7d46R7vOTJeFHyMzfQN9M/h81DXrG+VO5OPGR/QYNa39kMzkTc86tt1E=
+      - secure: cmxowwRhxwvGeFTyLT7d+xNsrB5JWaolb4rtuXCjbYVvnukaxJDKcKJ1/pyNi5OMu6qkMEVdAgNYE6q3H0TGE1leJmoaoMwIQo5I3GNMLtr4VNASmRupJrWV0Gjamj+3uC6d5iyg0PpeT73fvuUTQ8TNz5696svZtK7FtmwvigU=
     on_success: always
     on_failure: always
     on_start: never
   slack:
     rooms:
-      secure: jis/Fcasy+4QCqg6SZnf1XxXTNFrQENutYCN4QuMUQbfiD6QsLxTQS5o0MZ8e9EYTdptUXmjjgkaEulxO5fIUtmDcOrKcPxToDMjyCZEglfEf9CzRVRap7LnZwoCZ5yet/0E68qt4QhfTgfwYc9QIfSZo45rdyNS6BXI2vomGqE=
+      - secure: SpuG3G8p/B0qXmU6snPJ+JmcQoHMg/YmUuv9s0as+FdZquWURfbuOH51BxpiWIWlE23BMVGykQR+T0eKsYQ6cPNHLShaesE1qGJf/hG0tHWRK2fK6d3VTTpwZt6XxR3AGYnpCz8gmUxwMBZ1lESjHhQiQKy2AjFBweTTU2IfQaQ=
     on_success: change
     on_failure: change
     on_pull_requests: false

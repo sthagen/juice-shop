@@ -126,6 +126,8 @@ products:
       type: string
     quantity:
       type: number
+    limitPerUser:
+      type: number
     deletedDate:
       type: string
     urlForProductTamperingChallenge:
@@ -622,6 +624,11 @@ ctf:
       code:
         type: string
     csrfChallenge:
+      name:
+        type: string
+      code:
+        type: string
+    xssBonusChallenge:
       name:
         type: string
       code:

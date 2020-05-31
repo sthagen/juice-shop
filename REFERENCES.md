@@ -25,6 +25,14 @@ where this project was mentioned or used!
 
 ### Pod- & Webcasts
 
+* [ZAP in Ten](https://www.alldaydevops.com/zap-in-ten) with Simon
+  Bennetts
+  * [ZAP in Ten: ADDO Workshop Section 1 - Introduction](https://play.vidyard.com/BAmiaxyzS3g2BCgX2vbVvV)
+    :mega:
+  * [ZAP in Ten: ADDO Workshop Section 3 - Packaged Scans](https://play.vidyard.com/iT5C1onahsh3YhQi5SRnLL)
+    :mega:
+  * [ZAP in Ten: ADDO Workshop Section 4 - Intro to Authentication](https://play.vidyard.com/zwWm4qMRc8wD2KAgozvC5t)
+    :mega:
 * 15min video tutorial by
   [Nick Malcolm](https://www.youtube.com/channel/UCgU77NClL2pLS92viQro6yA):
   [OWASP Juice Shop 101](https://youtu.be/8ZYoe0xu6QY) :godmode:
@@ -156,6 +164,10 @@ where this project was mentioned or used!
 
 ## Lectures and Trainings
 
+* [Web Application Ethical Hacking - Penetration Testing Course for Beginners](https://youtu.be/X4eRbHgRawI)
+  :godmode: by The Cyber Mentor on
+  [freeCodeCamp.org](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ)'s
+  YouTube channel
 * [Real World Web Penetration Testing](https://training.secureideas.com/course/real-world-web-pentesting/start-course/)
   course by Jason Gillam :dollar:
 * [Brakeing Down Security Web App Sec Training #1](https://drive.google.com/drive/folders/0B-qfQ-gWynwidlJ1YjgxakdPWDA)
@@ -187,7 +199,8 @@ where this project was mentioned or used!
 * Student project from
   [Google Summer of Code 2019](https://summerofcode.withgoogle.com/archive/2019/projects)
   * [OWASP Juice Shop: Feature Pack 2019](https://summerofcode.withgoogle.com/archive/2019/projects/6526397403627520/)
-    by Arpit Agrawal (mentored by Jannik Hollenbach, Björn Kimminich and Shoeb Patel)
+    by Arpit Agrawal (mentored by Jannik Hollenbach, Björn Kimminich and
+    Shoeb Patel)
 * [OWASP Juice Shop track](https://github.com/OpenSecuritySummit/oss2019/tree/master/content/tracks/OWASP-Juice-Shop)
   and related working sessions organized by Björn Kimminich,
   [Open Security Summit 2019](https://github.com/OpenSecuritySummit/oss2019),
@@ -223,6 +236,15 @@ instead!_
 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠
 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask:
 🦠
+
+* [OWASP ZAP Intro (Online)](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/270078609/)
+  by Simon Bennetts,
+  [48. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/),
+  23.04.2020 ([Youtube](https://youtu.be/SD28HdVI-Wk)) :mega:
+* [ZAP in Ten, Extended Edition: Automation Deepdive](https://www.alldaydevops.com/addo-speakers/simom-bennetts)
+  by Simon Bennetts,
+  [All Day DevOps Spring Break Edition](https://www.alldaydevops.com/),
+  17.04.2020 :bulb:
 
 #### 2019
 
