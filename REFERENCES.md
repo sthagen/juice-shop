@@ -25,6 +25,10 @@ where this project was mentioned or used!
 
 ### Pod- & Webcasts
 
+* [Web security for web developers with Zaproxy by Simon Bennetts](https://youtu.be/54UV2_JwcIY)
+  with
+  [Eddie Jaoude](https://www.youtube.com/channel/UC5mnBodB73bR88fLXHSfzYA)
+  :mega:
 * [ZAP in Ten](https://www.alldaydevops.com/zap-in-ten) with Simon
   Bennetts
   * [ZAP in Ten: ADDO Workshop Section 1 - Introduction](https://play.vidyard.com/BAmiaxyzS3g2BCgX2vbVvV)
@@ -37,6 +41,9 @@ where this project was mentioned or used!
   [Nick Malcolm](https://www.youtube.com/channel/UCgU77NClL2pLS92viQro6yA):
   [OWASP Juice Shop 101](https://youtu.be/8ZYoe0xu6QY) :godmode:
 * [Application Security Podcast](https://securityjourney.com/application-security-podcast):
+  * Episode 7.2:
+    [Jannik Hollenbach — Multijuicer: JuiceShop with a side of Kubernetes](https://podcast.securityjourney.com/jannik-hollenbach-multijuicer-juiceshop-with-a-side-of-kubernetes/)
+    ([Youtube](https://youtu.be/3M6EMDKIAYs))
   * Episode 5.21:
     [Season 5 Finale — A cross section of #AppSec (S05E21)](https://podcast.securityjourney.com/season-5-finale-a-cross-section-of-appsec/)
     (contains
@@ -188,6 +195,34 @@ where this project was mentioned or used!
 
 ## Summits & Open Source Events
 
+* [Juice Shop Track](https://open-security-summit-2020.heysummit.com/topics/owasp-juiceshop/)
+  at [Open Security Summit 2020](https://open-security-summit.org/)
+  * [OWASP Juice Shop Cocktail Party: Ask us anything!](https://open-security-summit-2020.heysummit.com/talks/owasp-juice-shop-cocktail-party-ask-us-anything/)
+    with Björn Kimminich, Jannik Hollenbach & Timo Pagel 15.06.2020
+    ([Youtube](https://youtu.be/h5ApBfFMmao))
+  * [OWASP Juice Shop Deep Dive: MultiJuicer](https://open-security-summit-2020.heysummit.com/talks/owasp-juice-shop-deep-dive-multijuicer/)
+    with Jannik Hollenbach & Robert Seedorf, 15.06.2020
+    ([Youtube](https://youtu.be/1YHjkc3Xzd0))
+  * [OWASP Juice Shop Deep Dive: Integration](https://open-security-summit-2020.heysummit.com/talks/owasp-juice-shop-deep-dive-integration/)
+    with Björn Kimminich, 15.06.2020
+    ([Youtube](https://youtu.be/9SkUohiKgtU))
+  * [OWASP Juice Shop Deep Dive: Theming](https://open-security-summit-2020.heysummit.com/talks/owasp-juice-shop-deep-dive-theming-1/)
+    with Björn Kimminich, 15.06.2020
+    ([Youtube](https://youtu.be/WtY712DdlR8))
+  * [OWASP Juice Shop Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-juice-shop-introduction/)
+    with Björn Kimminich, 11.06.2020
+    ([Youtube](https://youtu.be/wCF08BdXdDg))
+  * [MultiJuicer Introduction](https://pre-summit-training-sessions.heysummit.com/talks/multijuicer-introduction/)
+    with Jannik Hollenbach and Robert Seedorf, 02.06.2020
+    ([Youtube](https://youtu.be/6NMjZbfnTOU))
+  * [OWASP Juice Shop Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-juice-shop/)
+    with Björn Kimminich, 02.06.2020
+    ([Youtube](https://youtu.be/Ry0mXz6ZPXc))
+* [Drinks with Adversaries: Creating Adversary Trading Cards](https://pre-summit-training-sessions.heysummit.com/talks/social-drinks-and-adversaries)
+  with Mark Miller at
+  [Open Security Summit 2020](https://open-security-summit.org/),
+  01.06.2020 ([Youtube](https://www.youtube.com/watch?v=3roVZNwptOU))
+  :mega:
 * Selected Project at
   [OWASP Projects Summit - Winter 2020](https://owasp.org/www-staff/projects/202002-Projects-Summit-Q1.html)
   with Björn Kimminich, Jannik Hollenbach and Marc Rüttler collaborating
@@ -224,18 +259,15 @@ where this project was mentioned or used!
 
 ## Conference and Meetup Appearances
 
+#### Upcoming
+
+* [OWASP Projects Panel](https://www.meetup.com/de-DE/womeninappsec/events/271754765/)
+  hosted by [OWASP WIA](https://www.meetup.com/womeninappsec/) moderated
+  by Zoe Braiterman with panelists Bjoern Kimminich, Glenn & Riccardo
+  ten Cate and Spyros Gasteratos
+  ([Youtube](https://youtu.be/d96-HCrSh2M))
+
 #### 2020
-
-🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠
-:mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask:
-🦠
-
-_Please stay safe at home for now and watch an existing recording
-instead!_
-
-🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠
-:mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask: 🦠 :mask:
-🦠
 
 * [OWASP ZAP Intro (Online)](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/270078609/)
   by Simon Bennetts,
