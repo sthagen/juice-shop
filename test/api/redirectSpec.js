@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2020 Bjoern Kimminich.
+ * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
 
@@ -62,7 +62,7 @@ describe('/redirect', () => {
       .expect('bodyContains', '&#39;includes&#39; of undefined')
   })
 
-  it('GET error message hinting at whitelist validation when calling /redirect with an unrecognized "to" target', () => {
+  it('GET error message hinting at allowlist validation when calling /redirect with an unrecognized "to" target', () => {
     return frisby.get(URL + '/redirect?to=whatever')
       .expect('status', 406)
       .expect('header', 'content-type', /text\/html/)

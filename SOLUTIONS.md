@@ -26,7 +26,7 @@ Shop easier to hack!
   * [★ DOM XSS](https://youtu.be/BuVxyBo05F8)
   * [★ Error Handling](https://youtu.be/WGafQnjSMk4)
   * [★ Missing Encoding](https://youtu.be/W7Bt2AmYtao)
-  * [★ Outdated Whitelist](https://youtu.be/TEdZAXuTfpk)
+  * [★ Outdated Allowlist](https://youtu.be/TEdZAXuTfpk)
   * [★ Privacy Policy](https://youtu.be/f5tM_4vBq-w)
   * [★ Repetitive Registration](https://youtu.be/mHjYOtKGYQM)
   * [★★ Login Admin](https://youtu.be/LuU1fSuc7Gg)
@@ -64,6 +64,12 @@ Shop easier to hack!
   * [★★★★ Forgotten Developer Backup (Sensitive Data Exposure)](https://youtu.be/YvkuVZ6r2Rg)
   * [★★★★ Forgotten Sales Backup (Sensitive Data Exposure)](https://youtu.be/5g4WRASni6g)
   * [★★★★ GDPR Data Theft (Sensitive Data Exposure)](https://youtu.be/GPW90c4Ahbc)
+  * [★★★★ Legacy Typosquatting (Vulnerable Components)](https://youtu.be/HqkGeWtwiHY)
+  * [★★★★ Login Bjoern (Broken Authentication)](https://youtu.be/pmBJ1ZAlpF8)
+  * [★★★★ Misplaced Signature File (Sensitive Data Exposure)](https://youtu.be/56qHiwxTjYY)
+* [Broken Authentication and SQL Injection - OWASP Juice Shop TryHackMe](https://youtu.be/W4MXUnZB2jc)
+  by
+  [Motasem Hamdan - CyberSecurity Trainer](https://www.youtube.com/channel/UCNSdU_1ehXtGclimTVckHmQ)
 * Live Hacking von Online-Shop „Juice Shop” (:de:)
   [Twitch live stream](https://www.twitch.tv/GregorBiswanger) recordings
   by

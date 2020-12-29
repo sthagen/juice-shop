@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2020 Bjoern Kimminich.
+ * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
 
@@ -23,7 +23,7 @@ module.exports = function performRedirect () {
 
 function isUnintendedRedirect (toUrl) {
   let unintended = true
-  for (const allowedUrl of insecurity.redirectWhitelist) {
+  for (const allowedUrl of insecurity.redirectAllowlist) {
     unintended = unintended && !utils.startsWith(toUrl, allowedUrl)
   }
   return unintended

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2020 Bjoern Kimminich.
+ * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
 
@@ -8,6 +8,10 @@ const models = require('../models/index')
 module.exports.getPaymentMethods = function getPaymentMethods () {
   return async (req, res, next) => {
     const cards = await models.Card.findAll({ where: { UserId: req.body.UserId } })
+    cards.map(card => {
+      const cardNumber = String(card.cardNum)
+      card.cardNum = '*'.repeat(12) + cardNumber.substring(cardNumber.length - 4)
+    })
     res.status(200).json({ status: 'success', data: cards })
   }
 }
@@ -15,6 +19,10 @@ module.exports.getPaymentMethods = function getPaymentMethods () {
 module.exports.getPaymentMethodById = function getPaymentMethodById () {
   return async (req, res, next) => {
     const card = await models.Card.findOne({ where: { id: req.params.id, UserId: req.body.UserId } })
+    if (card) {
+      const cardNumber = String(card.cardNum)
+      card.cardNum = '*'.repeat(12) + cardNumber.substring(cardNumber.length - 4)
+    }
     if (card) {
       res.status(200).json({ status: 'success', data: card })
     } else {

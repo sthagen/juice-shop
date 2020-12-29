@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2020 Bjoern Kimminich.
+ * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
 
@@ -56,7 +56,6 @@ export class PaymentMethodComponent implements OnInit {
 
   load () {
     this.paymentService.get().subscribe((cards) => {
-      cards.map(card => { card.cardNum = '************' + String(card.cardNum).substring(String(card.cardNum).length - 4) })
       this.cardsExist = cards.length
       this.storedCards = cards
       this.dataSource = new MatTableDataSource<Element>(this.storedCards)

@@ -25,6 +25,9 @@ where this project was mentioned or used!
 
 ### Pod- & Webcasts
 
+* [Learn Web App Security Penetration Testing with Juice Shop \[Free\]](https://youtu.be/ShUTDUYEMWA)
+  by
+  [Gerald Auger - Simply Cyber](https://www.youtube.com/channel/UCG-48Ki-b6W_siaUkukJOSw)
 * [Web security for web developers with Zaproxy by Simon Bennetts](https://youtu.be/54UV2_JwcIY)
   with
   [Eddie Jaoude](https://www.youtube.com/channel/UC5mnBodB73bR88fLXHSfzYA)
@@ -263,6 +266,9 @@ where this project was mentioned or used!
 
 #### 2020
 
+* [FPs are Cheap. Show me the CVEs!](https://www.blackhat.com/eu-20/briefings/schedule/index.html#fps-are-cheap-show-me-the-cves-21345)
+  by Bas van Schaik & Kevin Backhouse,
+  [Black Hat Europe 2020](https://www.blackhat.com/eu-20/), 09.12.2020
 * [OWASP Projects Panel](https://www.meetup.com/de-DE/womeninappsec/events/271754765/)
   hosted by [OWASP WIA](https://www.meetup.com/womeninappsec/) moderated
   by Zoe Braiterman with panelists Bjoern Kimminich, Glenn & Riccardo

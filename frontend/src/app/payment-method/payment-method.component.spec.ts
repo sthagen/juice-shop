@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2020 Bjoern Kimminich.
+ * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
 
@@ -80,7 +80,7 @@ describe('PaymentMethodComponent', () => {
   })
 
   it('should hold cards returned by backend API', () => {
-    paymentService.get.and.returnValue(of([{ cardNum: '1231123112311231' }, { cardNum: '6454645464546454' }]))
+    paymentService.get.and.returnValue(of([{ cardNum: '************1231' }, { cardNum: '************6454' }]))
     component.load()
     expect(component.storedCards.length).toBe(2)
     expect(component.storedCards[0].cardNum).toBe('************1231')

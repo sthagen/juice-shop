@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2020 Bjoern Kimminich.
+ * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
 
@@ -42,10 +42,10 @@ describe('OrderSummaryComponent', () => {
 
     addressService = jasmine.createSpyObj('AddressService',['getById'])
     addressService.getById.and.returnValue(of([]))
-    basketService = jasmine.createSpyObj('BasketService', ['checkout', 'find', 'updateNumberOfCardItems'])
+    basketService = jasmine.createSpyObj('BasketService', ['checkout', 'find', 'updateNumberOfCartItems'])
     basketService.find.and.returnValue(of({ Products: [] }))
     basketService.checkout.and.returnValue(of({}))
-    basketService.updateNumberOfCardItems.and.returnValue(of({}))
+    basketService.updateNumberOfCartItems.and.returnValue(of({}))
     paymentService = jasmine.createSpyObj('PaymentService', ['getById'])
     paymentService.getById.and.returnValue(of([]))
     deliveryService = jasmine.createSpyObj('DeliveryService', ['getById'])
@@ -124,7 +124,7 @@ describe('OrderSummaryComponent', () => {
 
   it('should hold card on ngOnInit when paymentId is initialized to an id', () => {
     sessionStorage.setItem('paymentId', '1')
-    paymentService.getById.and.returnValue(of({ cardNum: '1234123412341234' }))
+    paymentService.getById.and.returnValue(of({ cardNum: '************1234' }))
     component.ngOnInit()
     expect(component.paymentMethod).toEqual({ cardNum: '1234' })
   })

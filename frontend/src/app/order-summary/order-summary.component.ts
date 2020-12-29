@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2020 Bjoern Kimminich.
+ * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
  */
 
@@ -9,6 +9,7 @@ import { PaymentService } from '../Services/payment.service'
 import { BasketService } from '../Services/basket.service'
 import { Router } from '@angular/router'
 import { DeliveryService } from '../Services/delivery.service'
+import { SnackBarHelperService } from '../Services/snack-bar-helper.service'
 
 @Component({
   selector: 'app-order-summary',
@@ -23,7 +24,7 @@ export class OrderSummaryComponent implements OnInit {
   public promotionalDiscount = 0
   public address: any
   public paymentMethod: any
-  constructor (private router: Router, private addressService: AddressService, private paymentService: PaymentService, private basketService: BasketService, private deliveryService: DeliveryService, private ngZone: NgZone) { }
+  constructor (private router: Router, private addressService: AddressService, private paymentService: PaymentService, private basketService: BasketService, private deliveryService: DeliveryService, private ngZone: NgZone, private snackBarHelperService: SnackBarHelperService) { }
 
   ngOnInit () {
     this.deliveryService.getById(sessionStorage.getItem('deliveryMethodId')).subscribe((method) => {
@@ -62,8 +63,11 @@ export class OrderSummaryComponent implements OnInit {
       sessionStorage.removeItem('deliveryMethodId')
       sessionStorage.removeItem('couponDetails')
       sessionStorage.removeItem('couponDiscount')
-      this.basketService.updateNumberOfCardItems()
+      this.basketService.updateNumberOfCartItems()
       this.ngZone.run(() => this.router.navigate(['/order-completion', orderConfirmationId]))
-    }, (err) => console.log(err))
+    }, (err) => {
+      console.log(err)
+      this.snackBarHelperService.open(err.error?.error.message, 'errorBar')
+    })
   }
 }
