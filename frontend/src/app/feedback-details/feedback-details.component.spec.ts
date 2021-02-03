@@ -8,7 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { UserService } from '../Services/user.service'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { MatDividerModule } from '@angular/material/divider'
-import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 
 import { FeedbackDetailsComponent } from './feedback-details.component'
 
@@ -16,7 +16,7 @@ describe('FeedbackDetailsComponent', () => {
   let component: FeedbackDetailsComponent
   let fixture: ComponentFixture<FeedbackDetailsComponent>
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         TranslateModule.forRoot(),
@@ -24,14 +24,14 @@ describe('FeedbackDetailsComponent', () => {
         MatDividerModule,
         MatDialogModule
       ],
-      declarations: [ FeedbackDetailsComponent ],
+      declarations: [FeedbackDetailsComponent],
       providers: [
         UserService,
         { provide: MatDialogRef, useValue: {} },
         { provide: MAT_DIALOG_DATA, useValue: { productData: {} } }
       ]
     })
-    .compileComponents()
+      .compileComponents()
   }))
 
   beforeEach(() => {

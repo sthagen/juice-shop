@@ -4,7 +4,7 @@
  */
 
 import { ChallengeService } from '../Services/challenge.service'
-import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 import { SocketIoService } from '../Services/socket-io.service'
 import { ConfigurationService } from '../Services/configuration.service'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
@@ -20,6 +20,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatListModule } from '@angular/material/list'
+import { roles } from '../roles'
+import { AdministrationService } from '../Services/administration.service'
 
 class MockSocket {
   on (str: string, callback: Function) {
@@ -33,26 +35,27 @@ describe('SidenavComponent', () => {
   let challengeService: any
   let cookieService: any
   let configurationService: any
-  let translateService: any
+  let administractionService: any
   let mockSocket: any
   let socketIoService: any
   let loginGuard
 
-  beforeEach(async(() => {
-
-    configurationService = jasmine.createSpyObj('ConfigurationService',['getApplicationConfiguration'])
+  beforeEach(waitForAsync(() => {
+    configurationService = jasmine.createSpyObj('ConfigurationService', ['getApplicationConfiguration'])
     configurationService.getApplicationConfiguration.and.returnValue(of({ application: { welcomeBanner: {} }, hackingInstructor: {} }))
-    challengeService = jasmine.createSpyObj('ChallengeService',['find'])
+    challengeService = jasmine.createSpyObj('ChallengeService', ['find'])
     challengeService.find.and.returnValue(of([{ solved: false }]))
-    cookieService = jasmine.createSpyObj('CookieService',['delete', 'get', 'set'])
+    administractionService = jasmine.createSpyObj('AdministrationService', ['getApplicationVersion'])
+    administractionService.getApplicationVersion.and.returnValue(of(null))
+    cookieService = jasmine.createSpyObj('CookieService', ['delete', 'get', 'set'])
     mockSocket = new MockSocket()
     socketIoService = jasmine.createSpyObj('SocketIoService', ['socket'])
     socketIoService.socket.and.returnValue(mockSocket)
-    loginGuard = jasmine.createSpyObj('LoginGuard',['tokenDecode'])
-    loginGuard.tokenDecode.and.returnValue(of(true))
+    loginGuard = jasmine.createSpyObj('LoginGuard', ['tokenDecode'])
+    loginGuard.tokenDecode.and.returnValue({})
 
     TestBed.configureTestingModule({
-      declarations: [ SidenavComponent ],
+      declarations: [SidenavComponent],
       imports: [
         HttpClientModule,
         TranslateModule.forRoot(),
@@ -67,15 +70,15 @@ describe('SidenavComponent', () => {
       providers: [
         { provide: ConfigurationService, useValue: configurationService },
         { provide: ChallengeService, useValue: challengeService },
+        { provide: AdministrationService, useValue: administractionService },
         { provide: CookieService, useValue: cookieService },
         { provide: SocketIoService, useValue: socketIoService },
         { provide: LoginGuard, useValue: loginGuard },
         TranslateService
       ]
     })
-    .compileComponents()
-
-    translateService = TestBed.inject(TranslateService)
+      .compileComponents()
+    TestBed.inject(TranslateService)
   }))
 
   beforeEach(() => {
@@ -86,5 +89,38 @@ describe('SidenavComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy()
+  })
+
+  it('should show accounting functionality when user has according role', () => {
+    loginGuard.tokenDecode.and.returnValue({ data: { role: roles.accounting } })
+
+    expect(component.isAccounting()).toBe(true)
+  })
+
+  it('should set version number as retrieved with "v" prefix', () => {
+    loginGuard.tokenDecode.and.returnValue({ data: { role: roles.accounting } })
+
+    expect(component.isAccounting()).toBe(true)
+  })
+
+  it('should not show accounting functionality when user lacks according role', () => {
+    administractionService.getApplicationVersion.and.returnValue(of('1.2.3'))
+    component.ngOnInit()
+
+    expect(component.version).toBe('v1.2.3')
+  })
+
+  it('should hide Score Board link when Score Board was not discovered yet', () => {
+    challengeService.find.and.returnValue(of([{ name: 'Score Board', solved: false }]))
+    component.getScoreBoardStatus()
+
+    expect(component.scoreBoardVisible).toBe(false)
+  })
+
+  it('should show Score Board link when Score Board was already discovered', () => {
+    challengeService.find.and.returnValue(of([{ name: 'Score Board', solved: true }]))
+    component.getScoreBoardStatus()
+
+    expect(component.scoreBoardVisible).toBe(true)
   })
 })

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 
 import { TwoFactorAuthEnterComponent } from './two-factor-auth-enter.component'
 import { SearchResultComponent } from '../search-result/search-result.component'
@@ -39,7 +39,7 @@ describe('TwoFactorAuthEnterComponent', () => {
   let fixture: ComponentFixture<TwoFactorAuthEnterComponent>
   let userService: any
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     userService = jasmine.createSpyObj('UserService', ['login'])
     userService.login.and.returnValue(of({}))
     userService.isLoggedIn = jasmine.createSpyObj('userService.isLoggedIn', ['next'])
@@ -68,14 +68,14 @@ describe('TwoFactorAuthEnterComponent', () => {
         MatSnackBarModule,
         MatTooltipModule
       ],
-      declarations: [ TwoFactorAuthEnterComponent, SearchResultComponent ],
+      declarations: [TwoFactorAuthEnterComponent, SearchResultComponent],
       providers: [
         { provide: UserService, useValue: userService },
         CookieService,
         WindowRefService
       ]
     })
-    .compileComponents()
+      .compileComponents()
   }))
 
   beforeEach(() => {

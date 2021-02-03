@@ -6,7 +6,7 @@
 import { TranslateModule } from '@ngx-translate/core'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ReactiveFormsModule } from '@angular/forms'
-import { async, ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core/testing'
+import { ComponentFixture, fakeAsync, flush, TestBed, tick, waitForAsync } from '@angular/core/testing'
 import { ForgotPasswordComponent } from './forgot-password.component'
 import { SecurityQuestionService } from '../Services/security-question.service'
 
@@ -28,15 +28,14 @@ describe('ForgotPasswordComponent', () => {
   let securityQuestionService: any
   let userService: any
 
-  beforeEach(async(() => {
-
+  beforeEach(waitForAsync(() => {
     securityQuestionService = jasmine.createSpyObj('SecurityQuestionService', ['findBy'])
     securityQuestionService.findBy.and.returnValue(of({}))
-    userService = jasmine.createSpyObj('UserService',['resetPassword'])
+    userService = jasmine.createSpyObj('UserService', ['resetPassword'])
     userService.resetPassword.and.returnValue(of({}))
 
     TestBed.configureTestingModule({
-      declarations: [ ForgotPasswordComponent ],
+      declarations: [ForgotPasswordComponent],
       imports: [
         TranslateModule.forRoot(),
         MatPasswordStrengthModule.forRoot(),
@@ -56,7 +55,7 @@ describe('ForgotPasswordComponent', () => {
         { provide: UserService, useValue: userService }
       ]
     })
-    .compileComponents()
+      .compileComponents()
   }))
 
   beforeEach(() => {
@@ -147,7 +146,7 @@ describe('ForgotPasswordComponent', () => {
 
   it('should clear form and show confirmation after changing password', () => {
     userService.resetPassword.and.returnValue(of({}))
-    spyOn(component,'resetForm')
+    spyOn(component, 'resetForm')
     component.resetPassword()
     expect(component.confirmation).toBeDefined()
     expect(component.resetForm).toHaveBeenCalled()
@@ -155,7 +154,7 @@ describe('ForgotPasswordComponent', () => {
 
   it('should clear form and gracefully handle error on password change', fakeAsync(() => {
     userService.resetPassword.and.returnValue(throwError({ error: 'Error' }))
-    spyOn(component,'resetErrorForm')
+    spyOn(component, 'resetErrorForm')
     component.resetPassword()
     expect(component.error).toBe('Error')
     expect(component.resetErrorForm).toHaveBeenCalled()

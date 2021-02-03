@@ -19,16 +19,14 @@ dom.watch()
   styleUrls: ['./token-sale.component.scss']
 })
 export class TokenSaleComponent implements OnInit {
-
   public altcoinName = 'Juicycoin'
-  constructor (private configurationService: ConfigurationService) { }
+  constructor (private readonly configurationService: ConfigurationService) { }
 
   ngOnInit () {
     this.configurationService.getApplicationConfiguration().subscribe((config: any) => {
-      if (config && config.application && config.application.altcoinName) {
+      if (config?.application?.altcoinName) {
         this.altcoinName = config.application.altcoinName
       }
     }, (err) => console.log(err))
   }
-
 }

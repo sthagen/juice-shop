@@ -13,25 +13,23 @@ import { ConfigurationService } from '../Services/configuration.service'
   styleUrls: ['./privacy-policy.component.scss']
 })
 export class PrivacyPolicyComponent implements OnInit {
-
   public applicationName: string = 'OWASP Juice Shop'
   public privacyContactEmail!: string
   public applicationUrl!: string
 
-  constructor (@Inject(DOCUMENT) private _document: HTMLDocument, private configurationService: ConfigurationService) { }
+  constructor (@Inject(DOCUMENT) private readonly _document: HTMLDocument, private readonly configurationService: ConfigurationService) { }
 
   ngOnInit (): void {
     this.applicationUrl = this._document.location.protocol + '//' + this._document.location.hostname
     this.configurationService.getApplicationConfiguration().subscribe((config: any) => {
-      if (config && config.application && config.application.name) {
+      if (config?.application?.name) {
         this.applicationName = config.application.name
       }
-      if (config && config.application && config.application.privacyContactEmail) {
+      if (config?.application?.privacyContactEmail) {
         this.privacyContactEmail = config.application.privacyContactEmail
       } else {
         this.privacyContactEmail = `donotreply@${this._document.location.hostname}`
       }
     }, (err) => console.log(err))
   }
-
 }
