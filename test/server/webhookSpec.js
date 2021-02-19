@@ -13,7 +13,8 @@ describe('webhook', () => {
 
   const challenge = {
     key: 'key',
-    name: 'name'
+    name: 'name',
+    difficulty: 1
   }
 
   describe('notify', () => {
@@ -22,11 +23,11 @@ describe('webhook', () => {
     })
 
     it('fails when supplied webhook is not a valid URL', () => {
-      expect(webhook.notify(challenge, 'localhorst')).to.eventually.throw('Invalid URI "localhorst"')
+      expect(webhook.notify(challenge, 0, 'localhorst')).to.eventually.throw('Invalid URI "localhorst"')
     })
 
     it('submits POST with payload to existing URL', () => {
-      expect(webhook.notify(challenge, 'https://enlm7zwniuyah.x.pipedream.net/')).to.eventually.not.throw()
+      expect(webhook.notify(challenge, 0, 'https://enlm7zwniuyah.x.pipedream.net/')).to.eventually.not.throw()
     })
   })
 })
